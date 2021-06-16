@@ -1,0 +1,40 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <SwitchPreferenceCompat
+        app:key="custom_terms"
+        app:summaryOff="@string/custom_terms_summary_off"
+        app:summaryOn="@string/custom_terms_summary_on"
+        app:title="@string/custom_title" />
+
+    <Preference
+        app:fragment="io.github.hiromoo.kyutechtimetable.activity.SettingsActivity$QuarterFragment"
+        app:key="quarter_header"
+        app:title="@string/quarter_header"
+        app:dependency="custom_terms" />
+
+    <Preference
+        app:fragment="io.github.hiromoo.kyutechtimetable.activity.SettingsActivity$PeriodFragment"
+        app:key="period_header"
+        app:title="@string/period_header"
+        app:dependency="custom_terms" />
+
+    <Preference
+        app:key="subject_time_zone"
+        app:title="@string/time_zone"
+        app:dependency="custom_terms" />
+
+    <!--<EditTextPreference
+        app:key="signature"
+        app:title="@string/signature_title"
+        app:useSimpleSummaryProvider="true" />
+
+    <ListPreference
+        app:defaultValue="reply"
+        app:entries="@array/reply_entries"
+        app:entryValues="@array/reply_values"
+        app:key="reply"
+        app:title="@string/reply_title"
+        app:useSimpleSummaryProvider="true" />-->
+
+</PreferenceScreen>

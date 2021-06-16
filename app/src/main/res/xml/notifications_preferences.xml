@@ -1,0 +1,48 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory>
+
+        <SwitchPreferenceCompat
+            app:key="default_notification_enabled"
+            app:title="@string/default_notification_enabled"
+            app:summaryOff="@string/default_notification_enabled_summary_off"
+            app:summaryOn="@string/default_notification_enabled_summary_on"/>
+
+        <Preference
+            app:key="default_notification_time"
+            app:title="@string/default_notification_time" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory>
+
+        <Preference
+            app:key="open_app_notifications_settings"
+            app:title="@string/title_open_app_notification_settings">
+
+            <intent
+                android:action="android.settings.APP_NOTIFICATION_SETTINGS">
+
+                <extra
+                    android:name="android.provider.extra.APP_PACKAGE"
+                    android:value="io.github.hiromoo.kyutechtimetable" />
+
+            </intent>
+
+        </Preference>
+
+    </PreferenceCategory>
+
+    <!--<SwitchPreferenceCompat
+        app:key="sync"
+        app:title="@string/sync_title" />
+
+    <SwitchPreferenceCompat
+        app:dependency="sync"
+        app:key="attachment"
+        app:summaryOff="@string/attachment_summary_off"
+        app:summaryOn="@string/attachment_summary_on"
+        app:title="@string/attachment_title" />-->
+
+</PreferenceScreen>

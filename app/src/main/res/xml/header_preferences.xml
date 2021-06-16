@@ -1,0 +1,33 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <Preference
+        app:fragment="io.github.hiromoo.kyutechtimetable.activity.SettingsActivity$TermsFragment"
+        app:icon="@drawable/outline_date_range_24"
+        app:key="messages_header"
+        app:title="@string/terms_header" />
+
+    <Preference
+        app:fragment="io.github.hiromoo.kyutechtimetable.activity.SettingsActivity$NotificationsFragment"
+        app:icon="@drawable/outline_notifications_24"
+        app:key="notifications_header"
+        app:title="@string/notifications_header" />
+
+    <Preference
+        app:icon="@drawable/outline_app_settings_alt_24"
+        app:key="open_app_settings"
+        app:title="@string/title_open_app_settings">
+
+        <intent
+            android:action="android.settings.APPLICATION_DETAILS_SETTINGS"
+            android:data="package:io.github.hiromoo.kyutechtimetable">
+
+            <!--<extra
+                android:name="package"
+                android:value="package:io.github.hiromoo.kyutechtimetable" />-->
+
+        </intent>
+
+    </Preference>
+
+</PreferenceScreen>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">九工大 時間割</string>
+    <string name="title_home">ホーム</string>
+    <string name="title_schedule">予定</string>
+    <string name="Monday">月</string>
+    <string name="Tuesday">火</string>
+    <string name="Wednesday">水</string>
+    <string name="Thursday">木</string>
+    <string name="Friday">金</string>
+    <string name="update_timetable">時間割を更新</string>
+    <string name="quarter">%dQ</string>
+    <string name="channel_name_schedule">予定</string>
+    <string name="channel_description_schedule">予定の通知を行います。</string>
+    <string name="update">更新</string>
+    <string name="ok">OK</string>
+    <string name="cancel">キャンセル</string>
+    <string name="add_schedule">予定の追加</string>
+    <string name="term_with_string">%s 〜 %s</string>
+    <string name="time_before">%d%s前</string>
+    <string name="add_title">タイトルを追加</string>
+    <string name="add_location">場所を追加</string>
+    <string name="add_description">説明を追加</string>
+    <string name="delete_schedule">予定を削除</string>
+    <string name="delete_schedule_message">この予定を削除しますか？</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="licenses">ライセンス</string>
+    <string name="term">〜</string>
+    <string name="delete_subject">科目を削除</string>
+    <string name="delete_subject_message">この科目を削除しますか？</string>
+    <string name="title">タイトル</string>
+    <string name="day_of_week_and_period">%s %d限</string>
+    <string name="location">場所</string>
+    <string name="description">説明</string>
+    <string name="settings">設定</string>
+    <string name="title_activity_settings">設定</string>
+
+    <!-- Preference Titles -->
+    <string name="terms_header">期間</string>
+    <string name="notifications_header">通知</string>
+    <string name="quarter_header">クォーター</string>
+
+    <!-- Terms Preferences -->
+    <string name="custom_title">カスタム期間を使用</string>
+
+    <!-- Notifications Preferences -->
+    <string name="title_open_app_notification_settings">アプリの通知設定を開く</string>
+    <string name="default_notification_time">デフォルトの通知時間</string>
+
+    <string name="custom_terms_summary_off">九工大に基づく期間を使用します</string>
+    <string name="custom_terms_summary_on">カスタマイズされた期間を使用します</string>
+    <string name="period_header">時限</string>
+    <string name="start">開始</string>
+    <string name="finish">終了</string>
+    <string name="period_1">1限目</string>
+    <string name="period_2">2限目</string>
+    <string name="period_3">3限目</string>
+    <string name="period_4">4限目</string>
+    <string name="period_5">5限目</string>
+    <string name="class_time_title">授業時間</string>
+    <string name="class_time">%d%s間</string>
+    <string name="title_open_app_settings">アプリの設定を開く</string>
+    <string name="weeks">週</string>
+    <string name="days">日</string>
+    <string name="hours">時間</string>
+    <string name="minutes">分</string>
+    <string name="default_notification_enabled">デフォルト通知</string>
+    <string name="default_notification_enabled_summary_off">新規の予定のデフォルトの通知は無効になります</string>
+    <string name="default_notification_enabled_summary_on">新規の予定のデフォルトの通知は有効になります</string>
+    <string name="item_export">エクスポート</string>
+    <string name="item_import">インポート</string>
+    <string name="time_zone">タイムゾーン</string>
+    <string name="notification_off">通知オフ</string>
+    <string name="delete_all_schedules">全ての予定を削除</string>
+    <string name="delete_all_schedules_message">本当に全ての予定を削除しますか？ (この操作は元に戻せません。)</string>
+    <string name="delete_all_subjects">全ての科目を削除</string>
+    <string name="delete_all_subjects_message">本当に全ての科目を削除しますか？ (この操作は元に戻せません。)</string>
+
+</resources>

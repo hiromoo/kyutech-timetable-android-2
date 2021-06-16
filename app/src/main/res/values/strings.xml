@@ -1,0 +1,82 @@
+<resources>
+    <string name="app_name">Kyutech Timetable</string>
+    <string name="title_home">Home</string>
+    <string name="title_schedule">Schedule</string>
+    <string name="Monday">Mon</string>
+    <string name="Tuesday">Tue</string>
+    <string name="Wednesday">Wed</string>
+    <string name="Thursday">Thu</string>
+    <string name="Friday">Fri</string>
+    <string name="update_timetable">Update timetable</string>
+    <string name="quarter">%dQ</string>
+    <string name="channel_name_schedule">Schedule</string>
+    <string name="channel_description_schedule">This notifies you of schedules.</string>
+    <string name="update">Update</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="add_schedule">Add schedule</string>
+    <string name="term_with_string">%s 〜 %s</string>
+    <string name="time_before">%d %s before</string>
+    <string name="add_title">Add title</string>
+    <string name="add_location">Add location</string>
+    <string name="add_description">Add description</string>
+    <string name="delete_schedule">Delete schedule</string>
+    <string name="delete_schedule_message">Delete this schedule?</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="licenses">Licenses</string>
+    <string name="term">〜</string>
+    <string name="delete_subject">Delete subject</string>
+    <string name="delete_subject_message">Delete this subject?</string>
+    <string name="title">Title</string>
+    <string name="day_of_week_and_period">%s, period %d</string>
+    <string name="location">Location</string>
+    <string name="description">Description</string>
+    <string name="settings">Settings</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Preference Titles -->
+    <string name="terms_header">Terms</string>
+    <string name="notifications_header">Notifications</string>
+    <string name="quarter_header">Quarter</string>
+
+    <!-- Terms Preferences -->
+    <string name="custom_title">Use custom terms</string>
+
+    <!-- Notifications Preferences -->
+    <string name="title_open_app_notification_settings">Open app notification settings</string>
+    <string name="default_notification_time">Default notification time</string>
+
+    <string name="custom_terms_summary_off">Use the terms based on Kyutech</string>
+    <string name="custom_terms_summary_on">Use your customized terms</string>
+    <string name="period_header">Period</string>
+    <string name="start">Start</string>
+    <string name="finish">Finish</string>
+    <string name="period_1">1st period</string>
+    <string name="period_2">2nd period</string>
+    <string name="period_3">3rd period</string>
+    <string name="period_4">4th period</string>
+    <string name="period_5">5th period</string>
+    <string name="class_time_title">Class time</string>
+    <string name="title_open_app_settings">Open app settings</string>
+    <string name="class_time">For %d %s</string>
+    <string name="weeks">Weeks</string>
+    <string name="days">Days</string>
+    <string name="hours">Hours</string>
+    <string name="minutes">Minutes</string>
+    <string name="default_notification_enabled">Default notification enabled</string>
+    <string name="default_notification_enabled_summary_off">Default notification of new schedules will be disabled</string>
+    <string name="default_notification_enabled_summary_on">Default notification of new schedules will be enabled</string>
+    <string name="item_export">Export</string>
+    <string name="item_import">Import</string>
+    <string name="time_zone">Time zone</string>
+    <string name="notification_off">Notification off</string>
+    <string name="delete_all_schedules">Delete all schedules</string>
+    <string name="delete_all_schedules_message">Really delete all schedules? (This operation can\'t be undo.)</string>
+    <string name="delete_all_subjects">Delete all subjects</string>
+    <string name="delete_all_subjects_message">Really delete all subjects? (This operation can\'t be undo.)</string>
+
+</resources>

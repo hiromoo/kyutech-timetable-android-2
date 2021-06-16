@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_add"
+        android:icon="@drawable/outline_add_24"
+        android:title="@string/add_schedule"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_export"
+        android:icon="@drawable/outline_file_upload_20"
+        android:title="@string/item_export"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_import"
+        android:icon="@drawable/outline_file_download_20"
+        android:title="@string/item_import"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_delete_all_schedules"
+        android:icon="@drawable/outline_delete_sweep_24"
+        android:title="@string/delete_all_schedules"
+        app:showAsAction="never" />
+</menu>
