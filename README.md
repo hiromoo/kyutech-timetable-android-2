@@ -1,5 +1,7 @@
 # kyutech-timetable-android-2
 
+[Website](https://hiromoo.github.io/kyutech-timetable-home/)
+
 [Google Play Store](https://play.google.com/store/apps/details?id=io.github.hiromoo.kyutechtimetable)
 
 # License
