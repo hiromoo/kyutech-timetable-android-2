@@ -16,6 +16,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.gms.ads.AdRequest
 import io.github.hiromoo.kyutechtimetable.PickersDialog
 import io.github.hiromoo.kyutechtimetable.R
 import io.github.hiromoo.kyutechtimetable.StartActivityLifecycleObserver
@@ -153,6 +154,8 @@ class HomeFragment : Fragment() {
                 }
             }
             timetable.layoutManager = GridLayoutManager(context, COLUMNS)
+            val adRequest = AdRequest.Builder().build()
+            bottomAdView.loadAd(adRequest)
             with(viewModel) {
                 year.observe(viewLifecycleOwner, {
                     buttonYear.text = it.toString()

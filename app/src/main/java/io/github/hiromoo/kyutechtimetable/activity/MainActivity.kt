@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
+import com.google.android.gms.ads.MobileAds
 import io.github.hiromoo.kyutechtimetable.R
 import io.github.hiromoo.kyutechtimetable.databinding.ActivityMainBinding
 import io.github.hiromoo.kyutechtimetable.model.Data.Companion.load
@@ -25,5 +26,7 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
         load(this)
+
+        MobileAds.initialize(this) {}
     }
 }
