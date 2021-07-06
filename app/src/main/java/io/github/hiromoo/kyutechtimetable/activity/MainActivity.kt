@@ -1,6 +1,8 @@
 package io.github.hiromoo.kyutechtimetable.activity
 
 import android.os.Bundle
+import android.view.ViewGroup
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
@@ -28,5 +30,18 @@ class MainActivity : AppCompatActivity() {
         load(this)
 
         MobileAds.initialize(this) {}
+
+        // Crash test
+        /*
+        val crashButton = Button(this)
+        crashButton.text = "Crash!"
+        crashButton.setOnClickListener {
+            throw RuntimeException("Test Crash") // Force a crash
+        }
+
+        addContentView(crashButton, ViewGroup.LayoutParams(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT))
+        */
     }
 }

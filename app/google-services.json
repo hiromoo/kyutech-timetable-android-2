@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "282252056383",
+    "project_id": "kyutech-timetable-android",
+    "storage_bucket": "kyutech-timetable-android.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:282252056383:android:148b08228fd0bbced9658a",
+        "android_client_info": {
+          "package_name": "io.github.hiromoo.kyutechtimetable"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "282252056383-51bqqsidu3ukpkaosh9f2bepdkq5ie9r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPzVsxi_q1To-L1hSWkF992uq-Zz_LsNo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "282252056383-51bqqsidu3ukpkaosh9f2bepdkq5ie9r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
