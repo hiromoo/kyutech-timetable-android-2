@@ -18,7 +18,7 @@ class AlarmReceiver : BroadcastReceiver() {
                 }
             }
         } else {
-            val id = intent.getStringExtra("id")!!
+            val id = intent.getIntExtra("id", -1)
             val icon = intent.getIntExtra("icon", R.drawable.outline_event_24)
             val name = intent.getStringExtra("title")!!
             val location = intent.getStringExtra("text")!!

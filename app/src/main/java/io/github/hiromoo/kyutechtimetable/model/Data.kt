@@ -156,6 +156,7 @@ class Data {
                 return firstNotificationId
             }
             while (nextNotificationId != firstNotificationId) {
+                if (nextNotificationId < 0) nextNotificationId = 0
                 if (!notificationIds.values.contains(nextNotificationId)) {
                     return nextNotificationId
                 }
@@ -428,7 +429,7 @@ class Data {
             }
             if (index < 0) {
                 return if (add) {
-                    val subject = Subject(
+                    Subject(
                         name,
                         code,
                         `class`,
@@ -441,9 +442,9 @@ class Data {
                         location,
                         description,
                         context
-                    )
-                    subjects.add(subject)
-                    subject
+                    ).apply {
+                        subjects.add(this)
+                    }
                 } else return null
             }
             with(subjects[index]) {

@@ -73,7 +73,7 @@ class Notifier(private val context: Context) {
         )
     }
 
-    fun notify(id: String, icon: Int, title: String, text: String, time: Long) {
+    fun notify(id: Int, icon: Int, title: String, text: String, time: Long) {
         val notification = NotificationCompat.Builder(context, CHANNEL_ID)
             .setSmallIcon(icon)
             .setContentTitle(title)
@@ -82,7 +82,7 @@ class Notifier(private val context: Context) {
             .setShowWhen(true)
             .build()
         with(NotificationManagerCompat.from(context)) {
-            notify(notificationIds[id]!!, notification)
+            notify(id, notification)
         }
     }
 
@@ -132,7 +132,7 @@ class Notifier(private val context: Context) {
                 context,
                 it,
                 Intent(context, AlarmReceiver::class.java)
-                    .putExtra("id", id)
+                    .putExtra("id", it)
                     .putExtra("icon", icon)
                     .putExtra("title", title)
                     .putExtra("text", text)

@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "282252056383",
-    "project_id": "kyutech-timetable-android",
-    "storage_bucket": "kyutech-timetable-android.appspot.com"
+    "project_number": "920977076749",
+    "project_id": "kyutech-timetable",
+    "storage_bucket": "kyutech-timetable.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:282252056383:android:148b08228fd0bbced9658a",
+        "mobilesdk_app_id": "1:920977076749:android:c9949395a377f226855b44",
         "android_client_info": {
           "package_name": "io.github.hiromoo.kyutechtimetable"
         }
       },
       "oauth_client": [
         {
-          "client_id": "282252056383-51bqqsidu3ukpkaosh9f2bepdkq5ie9r.apps.googleusercontent.com",
+          "client_id": "920977076749-rg21v3g7932vvfi7vf5ogmdc43n1r4g5.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAPzVsxi_q1To-L1hSWkF992uq-Zz_LsNo"
+          "current_key": "AIzaSyDXu-RdikGZkGLkiwusiJa3P_s9c1NU0Qo"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "282252056383-51bqqsidu3ukpkaosh9f2bepdkq5ie9r.apps.googleusercontent.com",
+              "client_id": "920977076749-rg21v3g7932vvfi7vf5ogmdc43n1r4g5.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
