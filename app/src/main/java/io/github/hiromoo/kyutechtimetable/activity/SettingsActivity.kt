@@ -3,6 +3,7 @@ package io.github.hiromoo.kyutechtimetable.activity
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
+import androidx.annotation.Keep
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.Preference
 import androidx.preference.PreferenceDataStore
@@ -112,6 +113,7 @@ class SettingsActivity : AppCompatActivity(),
         }
     }
 
+    @Keep
     class TermsFragment : PreferenceFragmentCompat(),
         SharedPreferences.OnSharedPreferenceChangeListener {
 
@@ -179,6 +181,7 @@ class SettingsActivity : AppCompatActivity(),
         }
     }
 
+    @Keep
     class NotificationsFragment : PreferenceFragmentCompat() {
 
         private val enabledPreference: SwitchPreferenceCompat by lazy {
@@ -220,6 +223,7 @@ class SettingsActivity : AppCompatActivity(),
         }
     }
 
+    @Keep
     class QuarterFragment : PreferenceFragmentCompat() {
 
         private val quartersPreferences: QuartersPreferences by lazy {
@@ -321,6 +325,7 @@ class SettingsActivity : AppCompatActivity(),
         }
     }
 
+    @Keep
     class PeriodFragment : PreferenceFragmentCompat() {
 
         private val periodsPreference: PeriodsPreference by lazy {
