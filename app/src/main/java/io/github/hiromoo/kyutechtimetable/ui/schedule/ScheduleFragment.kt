@@ -28,6 +28,7 @@ import io.github.hiromoo.kyutechtimetable.model.Data.Companion.importSchedules
 import io.github.hiromoo.kyutechtimetable.model.Data.Companion.removeAllSchedules
 import io.github.hiromoo.kyutechtimetable.model.Data.Companion.schedules
 import io.github.hiromoo.kyutechtimetable.model.Schedule
+import io.github.hiromoo.kyutechtimetable.ui.ad.BottomAdView
 import io.github.hiromoo.kyutechtimetable.ui.schedule.detail.ScheduleDetailFragment
 import io.github.hiromoo.kyutechtimetable.ui.schedule.detail.ScheduleEditFragment
 import java.time.LocalDate
@@ -45,6 +46,8 @@ class ScheduleFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+
+    private lateinit var bottomAdView: BottomAdView
 
     private val filteredSchedules: List<Schedule>
         get() {
@@ -88,7 +91,7 @@ class ScheduleFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        viewModel = ViewModelProvider(this).get(ScheduleViewModel::class.java)
+        viewModel = ViewModelProvider(this)[ScheduleViewModel::class.java]
         _binding = FragmentScheduleBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -136,6 +139,9 @@ class ScheduleFragment : Fragment() {
                 viewModel.setDate(LocalDate.of(year, month + 1, dayOfMonth))
             }
             scheduleListView.layoutManager = LinearLayoutManager(context)
+            bottomAdView = BottomAdView(requireActivity(), bottomAdViewContainer!!).apply {
+                loadBanner()
+            }
 
             viewModel.date.observe(viewLifecycleOwner) {
                 calendarView.date = it.atStartOfDay(ZoneId.systemDefault()).toEpochSecond() * 1000

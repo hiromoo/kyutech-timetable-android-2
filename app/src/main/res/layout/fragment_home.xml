@@ -111,7 +111,7 @@
             android:id="@+id/scrollView"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_constraintBottom_toTopOf="@+id/bottom_adView"
+            app:layout_constraintBottom_toTopOf="@+id/bottom_adView_container"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/day_of_week">
@@ -187,17 +187,15 @@
         <!--
         adUnitId(Test): ca-app-pub-3940256099942544/6300978111
         -->
-        <com.google.android.gms.ads.AdView
-            android:id="@+id/bottom_adView"
-            android:layout_width="0dp"
+
+        <FrameLayout
+            android:id="@+id/bottom_adView_container"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            app:adSize="BANNER"
-            app:adUnitId="ca-app-pub-3872584665626955/6970400471"
+            android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"></FrameLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

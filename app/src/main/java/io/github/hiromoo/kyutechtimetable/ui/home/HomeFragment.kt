@@ -4,6 +4,7 @@ import android.app.Activity.RESULT_OK
 import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
+import android.util.DisplayMetrics
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,25 +18,28 @@ import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdSize
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 import io.github.hiromoo.kyutechtimetable.PickersDialog
 import io.github.hiromoo.kyutechtimetable.R
 import io.github.hiromoo.kyutechtimetable.StartActivityLifecycleObserver
 import io.github.hiromoo.kyutechtimetable.activity.SettingsActivity
 import io.github.hiromoo.kyutechtimetable.activity.WebActivity
 import io.github.hiromoo.kyutechtimetable.databinding.FragmentHomeBinding
-import io.github.hiromoo.kyutechtimetable.model.Data.Companion.subjects
-import io.github.hiromoo.kyutechtimetable.model.Subject
-import io.github.hiromoo.kyutechtimetable.ui.home.subject.SubjectDetailFragment
-import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
-import io.github.hiromoo.kyutechtimetable.model.Data
 import io.github.hiromoo.kyutechtimetable.model.Data.Companion.removeAllSubjects
 import io.github.hiromoo.kyutechtimetable.model.Data.Companion.save
+import io.github.hiromoo.kyutechtimetable.model.Data.Companion.subjects
+import io.github.hiromoo.kyutechtimetable.model.Subject
+import io.github.hiromoo.kyutechtimetable.ui.ad.BottomAdView
+import io.github.hiromoo.kyutechtimetable.ui.home.subject.SubjectDetailFragment
 
 class HomeFragment : Fragment() {
 
     companion object {
         private const val COLUMNS = 5
         private const val ROWS = 5
+        private const val AD_UNIT_ID = "ca-app-pub-3872584665626955/6970400471"
     }
 
     private lateinit var webActivityObserver: StartActivityLifecycleObserver
@@ -47,6 +51,8 @@ class HomeFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
+    private lateinit var bottomAdView: BottomAdView
+
     private val filteredSubjects: List<Subject>
         get() {
             with(viewModel) {
@@ -55,6 +61,47 @@ class HomeFragment : Fragment() {
                 }.sortedBy {
                     it.period * COLUMNS + it.dayOfWeek
                 }
+            }
+        }
+
+    private val adSize: AdSize
+        get() {
+            if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.R) {
+                val outMetrics = DisplayMetrics()
+                @Suppress("DEPRECATION")
+                activity?.windowManager?.defaultDisplay?.getMetrics(outMetrics)
+
+                val density = outMetrics.density
+
+                var adWidthPixels = _binding?.bottomAdViewContainer?.width?.toFloat() ?: 0f
+                if (adWidthPixels == 0f) {
+                    adWidthPixels = outMetrics.widthPixels.toFloat()
+                }
+
+                val adWidth = (adWidthPixels / density).toInt()
+                return AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(
+                    requireContext(),
+                    adWidth
+                )
+            } else {
+                val outMetrics = DisplayMetrics()
+                @Suppress("DEPRECATION")
+                activity?.windowManager?.defaultDisplay?.getMetrics(outMetrics)
+
+                val density = resources.displayMetrics.density
+
+                var adWidthPixels = _binding?.bottomAdViewContainer?.width?.toFloat() ?: 0f
+                if (adWidthPixels == 0f) {
+                    adWidthPixels =
+                        activity?.windowManager?.currentWindowMetrics?.bounds?.width()?.toFloat()
+                            ?: 0f
+                }
+
+                val adWidth = (adWidthPixels / density).toInt()
+                return AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(
+                    requireContext(),
+                    adWidth
+                )
             }
         }
 
@@ -75,7 +122,7 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
+        viewModel = ViewModelProvider(this)[HomeViewModel::class.java]
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -154,18 +201,19 @@ class HomeFragment : Fragment() {
                 }
             }
             timetable.layoutManager = GridLayoutManager(context, COLUMNS)
-            val adRequest = AdRequest.Builder().build()
-            bottomAdView.loadAd(adRequest)
+            bottomAdView = BottomAdView(requireActivity(), bottomAdViewContainer).apply {
+                loadBanner()
+            }
             with(viewModel) {
-                year.observe(viewLifecycleOwner, {
+                year.observe(viewLifecycleOwner) {
                     buttonYear.text = it.toString()
                     setTimetable(filteredSubjects)
-                })
-                quarter.observe(viewLifecycleOwner, {
+                }
+                quarter.observe(viewLifecycleOwner) {
                     buttonQuarter.text = resources.getString(R.string.quarter, it)
                     setTimetable(filteredSubjects)
-                })
-                timetable.observe(viewLifecycleOwner, { subjectList ->
+                }
+                timetable.observe(viewLifecycleOwner) { subjectList ->
                     binding.timetable.adapter = TimetableAdapter(subjectList).apply {
                         setOnItemClickListener { _, position ->
                             val row = position / COLUMNS
@@ -189,7 +237,7 @@ class HomeFragment : Fragment() {
                             addFragment(subjectDetailFragment, "subject_edit")
                         }
                     }
-                })
+                }
             }
         }
     }
