@@ -39,7 +39,6 @@ class HomeFragment : Fragment() {
     companion object {
         private const val COLUMNS = 5
         private const val ROWS = 5
-        private const val AD_UNIT_ID = "ca-app-pub-3872584665626955/6970400471"
     }
 
     private lateinit var webActivityObserver: StartActivityLifecycleObserver
