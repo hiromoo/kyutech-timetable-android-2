@@ -11,6 +11,8 @@ data class Syllabus(
     val code: String,
     @SerialName("担当教員")
     val teachers: String,
+    @SerialName("開講年度")
+    val year: String,
     @SerialName("対象学年")
     val grade: String,
     @SerialName("開講学期")
