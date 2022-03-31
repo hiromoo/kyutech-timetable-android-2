@@ -63,47 +63,6 @@ class HomeFragment : Fragment() {
             }
         }
 
-    private val adSize: AdSize
-        get() {
-            if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.R) {
-                val outMetrics = DisplayMetrics()
-                @Suppress("DEPRECATION")
-                activity?.windowManager?.defaultDisplay?.getMetrics(outMetrics)
-
-                val density = outMetrics.density
-
-                var adWidthPixels = _binding?.bottomAdViewContainer?.width?.toFloat() ?: 0f
-                if (adWidthPixels == 0f) {
-                    adWidthPixels = outMetrics.widthPixels.toFloat()
-                }
-
-                val adWidth = (adWidthPixels / density).toInt()
-                return AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(
-                    requireContext(),
-                    adWidth
-                )
-            } else {
-                val outMetrics = DisplayMetrics()
-                @Suppress("DEPRECATION")
-                activity?.windowManager?.defaultDisplay?.getMetrics(outMetrics)
-
-                val density = resources.displayMetrics.density
-
-                var adWidthPixels = _binding?.bottomAdViewContainer?.width?.toFloat() ?: 0f
-                if (adWidthPixels == 0f) {
-                    adWidthPixels =
-                        activity?.windowManager?.currentWindowMetrics?.bounds?.width()?.toFloat()
-                            ?: 0f
-                }
-
-                val adWidth = (adWidthPixels / density).toInt()
-                return AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(
-                    requireContext(),
-                    adWidth
-                )
-            }
-        }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
