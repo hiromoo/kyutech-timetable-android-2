@@ -94,15 +94,15 @@ class Data {
             60 * 16 + 20
         )
         private val defaultStartDateOfQuarter = listOf(
-            listOf(4, 8),
-            listOf(6, 10),
-            listOf(10, 1),
-            listOf(12, 8)
+            listOf(4, 11),
+            listOf(6, 13),
+            listOf(10, 3),
+            listOf(12, 9)
         )
         private val defaultFinishDateOfQuarter = listOf(
-            listOf(6, 9),
-            listOf(8, 11),
-            listOf(12, 7),
+            listOf(6, 10),
+            listOf(8, 12),
+            listOf(12, 8),
             listOf(2, 17)
         )
         private const val defaultClassTimeMinute = 90
