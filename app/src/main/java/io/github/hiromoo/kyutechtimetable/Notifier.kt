@@ -6,6 +6,7 @@ import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
 import android.app.PendingIntent.FLAG_CANCEL_CURRENT
+import android.app.PendingIntent.FLAG_MUTABLE
 import android.content.ComponentName
 import android.content.Context
 import android.content.Context.ALARM_SERVICE
@@ -13,6 +14,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.media.RingtoneManager
 import android.media.RingtoneManager.TYPE_NOTIFICATION
+import android.os.Build
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import io.github.hiromoo.kyutechtimetable.model.Data.Companion.getNotificationId
@@ -21,13 +23,14 @@ import io.github.hiromoo.kyutechtimetable.model.Data.Companion.notificationIds
 import io.github.hiromoo.kyutechtimetable.model.Data.Companion.schedules
 import java.time.Instant
 import java.time.LocalDateTime
-import java.time.ZoneId
 import java.time.ZonedDateTime
 
 class Notifier(private val context: Context) {
 
     companion object {
         private const val CHANNEL_ID = "schedule"
+        private val PENDING_INTENT_FLAGS =
+            FLAG_CANCEL_CURRENT or if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) FLAG_MUTABLE else 0
     }
 
     private val alarmManager = context.getSystemService(ALARM_SERVICE) as AlarmManager
@@ -137,7 +140,7 @@ class Notifier(private val context: Context) {
                     .putExtra("title", title)
                     .putExtra("text", text)
                     .putExtra("time", time.toEpochSecond() * 1000),
-                FLAG_CANCEL_CURRENT
+                PENDING_INTENT_FLAGS
             )
         }
     }
@@ -148,7 +151,7 @@ class Notifier(private val context: Context) {
                 context,
                 it,
                 Intent(context, AlarmReceiver::class.java),
-                FLAG_CANCEL_CURRENT
+                PENDING_INTENT_FLAGS
             )
         }
     }
