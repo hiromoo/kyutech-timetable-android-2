@@ -57,7 +57,7 @@ class BottomAdView(private val activity: Activity, private val bottomAdViewConta
 
     fun loadBanner() {
         adView.adUnitId = AD_UNIT_ID
-        adView.adSize = adSize
+        adView.setAdSize(adSize)
         val adRequest = AdRequest.Builder().build()
         adView.loadAd(adRequest)
     }
